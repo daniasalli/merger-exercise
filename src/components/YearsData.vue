@@ -10,7 +10,6 @@
           <div class="text-right">
             <button class="border-0 bg-transparent" :aria-expanded="company.showCollapsed"
                     :aria-controls="`${company.year}`"
-                    v-b-toggle[company.year]
                     @click="collapse(index)">
               <i class="fa" :class="{'fa-caret-up': company.showCollapsed,
            'fa-caret-down': !company.showCollapsed}"></i>
@@ -34,8 +33,7 @@
             </transition-group>
           </div>
 
-          <b-collapse :id="`${company.year}`" v-model="company.showCollapsed"
-                      accordion="my-accordion">
+          <b-collapse :id="`${company.year}`" v-model="company.showCollapsed">
             <div class="col-12">
               <h6 class="text-right my-3"><span class="font-weight-light">Active:</span>
                 {{company.balance.active.sum | formatNumber}}</h6>
@@ -1110,7 +1108,7 @@ export default {
     },
     openDetail(title, data) {
       this.detailTitle = title;
-      this.detailData = data;
+      this.detailData = Object.assign({}, data);
       this.showDetail = true;
     },
   },
