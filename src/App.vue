@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <years-data msg="Merger Spot challenge"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import YearsData from './components/YearsData.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    YearsData,
   },
 };
 </script>
 
 <style lang="scss">
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
