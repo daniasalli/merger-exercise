@@ -117,7 +117,7 @@ export default {
     position: fixed;
     right: 0;
     top: 0;
-    width: 40%;
+    width: 400px;
     z-index: 1042;
     overflow: auto;
   }

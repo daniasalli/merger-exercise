@@ -1,10 +1,10 @@
 <template>
-  <div class=hello>
+  <div class="text-center">
     <h1>{{ msg }}</h1>
     <div>
       <h3 class="my-4">Years data</h3>
-      <div class="d-flex p-5 align-items-start justify-content-center flex-column col-10 mx-auto">
-        <div class="border m-3 col-12 p-3"
+      <div class="d-flex p-5 flex-column align-items-center col-10 mx-auto">
+        <div class="border year-container m-3 col-12 p-3"
              v-for="(company, index) in data" :key="company.year">
           <!-- Collapse controller-->
           <div class="text-right">
@@ -17,7 +17,8 @@
           </div>
 
         <!-- Collapsed information   -->
-          <div class="d-flex justify-content-between align-items-center" key="collapsed">
+          <div class="d-flex justify-content-between
+          align-items-center flex-sm-column flex-md-row px-3" key="collapsed">
             <h4 class="year-header my-0">{{company.year}}
               <small class="text-muted d-block">Balance</small>
             </h4>
@@ -120,7 +121,8 @@
       </div>
     </div>
     <transition name="fade">
-      <div v-if="showDetail" class="modal-backdrop"></div>
+      <div v-if="showDetail" class="modal-backdrop"
+            @click="showDetail = false"></div>
     </transition>
     <transition name="expand">
       <detail :title="detailTitle"
@@ -1138,6 +1140,10 @@ a {
       }
       /*background: #eaeef2;*/
     }
+  }
+
+  .year-container {
+    min-width: 300px;
   }
 
 .expand {
